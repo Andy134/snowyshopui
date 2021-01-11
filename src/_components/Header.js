@@ -2,8 +2,12 @@ import React from 'react';
 
 export default function Header(props) {
 
-    function handleChangeSearch(){
+    function handleChangeSearch() {
         props.handleChangeSearch(1)
+    }
+
+    function handleOpenCanvas() {
+        props.handleOpenCanvas()
     }
 
     return (
@@ -21,10 +25,10 @@ export default function Header(props) {
                             <nav className="header__menu">
                                 <ul>
                                     <li className="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="/">Women’s</a></li>
-                                    <li><a href="/">Men’s</a></li>
+                                    <li><a href="#">Women’s</a></li>
+                                    <li><a href="#">Men’s</a></li>
                                     <li><a href="./shop.html">Shop</a></li>
-                                    <li><a href="/">Pages</a>
+                                    <li><a href="#">Pages</a>
                                         <ul className="dropdown">
                                             <li><a href="./product-details.html">Product Details</a></li>
                                             <li><a href="./shop-cart.html">Shop Cart</a></li>
@@ -40,22 +44,22 @@ export default function Header(props) {
                         <div className="col-lg-3">
                             <div className="header__right">
                                 <div className="header__right__auth">
-                                    <a href="/">Login</a>
-                                    <a href="/">Register</a>
+                                    <a href="#">Login</a>
+                                    <a href="#">Register</a>
                                 </div>
                                 <ul className="header__right__widget">
                                     <li><span className="icon_search search-switch" onClick={handleChangeSearch}></span></li>
-                                    <li><a href="/"><span className="icon_heart_alt"></span>
+                                    <li><a href="#"><span className="icon_heart_alt"></span>
                                         <div className="tip">2</div>
                                     </a></li>
-                                    <li><a href="/"><span className="icon_bag_alt"></span>
+                                    <li><a href="#"><span className="icon_bag_alt"></span>
                                         <div className="tip">2</div>
                                     </a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div className="canvas__open">
+                    <div className="canvas__open" onClick={handleOpenCanvas}>
                         <i className="fa fa-bars"></i>
                     </div>
                 </div>

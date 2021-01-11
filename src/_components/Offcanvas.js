@@ -1,14 +1,24 @@
 import React from 'react';
+export default function Offcanvas(props) {
 
-export default function Offcanvas() {
+    const active = (props.status ? 'active' : '');
+
+    function handleCloseCanvas() {
+        props.handleCloseCanvas()
+    }
+
+    function handleChangeSearch() {
+        props.handleChangeSearch(1)
+    }
+
     return (
         <>
             {/* <!-- Offcanvas Menu Begin --> */}
-            <div className="offcanvas-menu-overlay"></div>
-            <div className="offcanvas-menu-wrapper">
-                <div className="offcanvas__close">+</div>
+            <div className={`offcanvas-menu-overlay ${active}`} onClick={handleCloseCanvas}></div>
+            <div className={`offcanvas-menu-wrapper ${active}`}>
+                <div className="offcanvas__close" onClick={handleCloseCanvas}>+</div>
                 <ul className="offcanvas__widget">
-                    <li><span className="icon_search search-switch"></span></li>
+                    <li><span className="icon_search search-switch" onClick={handleChangeSearch}></span></li>
                     <li><a href="/"><span className="icon_heart_alt"></span>
                         <div className="tip">2</div>
                     </a></li>

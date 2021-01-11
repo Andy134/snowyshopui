@@ -3,7 +3,6 @@ import React from 'react';
 
 export default function Search(props) {
 
-    // useEffect(() => {
     if (props.status === 1) {
         $('.search-model').fadeIn(400);
     }
@@ -12,7 +11,6 @@ export default function Search(props) {
             $('#search-input').val('');
         });
     }
-    // }, [props.status]);
 
     function handleChangeSearch() {
         props.handleChangeSearch(-1)
